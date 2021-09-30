@@ -1,0 +1,30 @@
+"json.schemas": [
+    {
+      "fileMatch": [
+        "/receipts/*.json",
+        "!/receipts/*.excluded.json"
+      ],
+      "url": "./receipts.schema.json"
+    }
+  ]
+{
+    "type": "array",
+    "title": "Keybindings configuration",
+    "items": {
+        "type": "object",
+        "required": ["key"],
+        "defaultSnippets": [
+            {
+                "label": "New keybinding",
+                "description": "Binds a key to a command for a given state",
+                "body": { "key": "$1", "command": "$2", "when": "$3" }
+            }
+        ],
+        "properties": {
+            "key": {
+                "type": "string"
+            }
+            ...
+        }
+    }
+}
